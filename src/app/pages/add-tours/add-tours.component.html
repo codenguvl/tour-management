@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row mb-3">
+        <div class="col d-flex justify-content-between align-items-center">
+            <h2>Thêm tour mới</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form>
+            <div class="form-group">
+                <label for="tourName">Tên tour:</label>
+                <input type="text" class="form-control mt-2" id="tourName" name="tourName" ngModel required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="locationId">Địa điểm:</label>
+                <input type="number" class="form-control mt-2" id="locationId" name="locationId" ngModel required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="startDate">Ngày bắt đầu:</label>
+                <input type="date" class="form-control mt-2" id="startDate" name="startDate" ngModel required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="endDate">Ngày kết thúc:</label>
+                <input type="date" class="form-control mt-2" id="endDate" name="endDate" ngModel required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="price">Giá:</label>
+                <input type="number" class="form-control mt-2" id="price" name="price" ngModel required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="description">Mô tả:</label>
+                <textarea class="form-control mt-2" id="description" name="description" ngModel required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Thêm tour</button>
+            <span class="mx-2"></span>
+            <button type="button" class="btn btn-secondary ml-2 mt-3" (click)="goBack()">Quay lại</button>
+        </form>
+    </div>
+</div>

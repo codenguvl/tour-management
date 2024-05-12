@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Thêm mới quyền</h2>
+    <form (ngSubmit)="savePermissions()">
+        <div class="form-group">
+            <label for="permissionName">Tên quyền:</label>
+            <input type="text" class="form-control mt-2" id="permissionName" placeholder="Nhập tên quyền">
+        </div>
+        <div class="form-group mt-4">
+            <label for="permissionSlug">Đường dẫn:</label>
+            <input class="form-control mt-2" id="permissionSlug" placeholder="Nhập đường dẫn">
+        </div>
+        <div class="form-group mt-4">
+            <label for="permissionDescription">Mô tả:</label>
+            <textarea class="form-control mt-2" id="permissionDescription" rows="3" placeholder="Nhập mô tả"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Lưu</button>
+    </form>
+</div>

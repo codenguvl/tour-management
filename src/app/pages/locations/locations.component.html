@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row mb-3">
+        <div class="col d-flex justify-content-between align-items-center">
+            <h2>Danh sách địa điểm</h2>
+            <button class="btn btn-success" (click)="navigateToAddLocation()">Thêm mới</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col-md-4 mb-4" *ngFor="let location of locations">
+                    <div class="card">
+                        <img [src]="location.image_url" class="card-img-top" alt="Hình ảnh">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ location.location_name }}</h5>
+                            <p class="card-text">Thể loại: {{ location.category_id }}</p>
+                            <button class="btn btn-primary" (click)="navigateToEditLocation(location.location_id)">Chỉnh
+                                sửa</button>
+                            <button class="btn btn-danger ms-2" (click)="confirmDeleteLocation(location)"
+                                data-toggle="popover" data-trigger="focus" title="Xác nhận xóa"
+                                data-content="Bạn có chắc chắn muốn xóa {{ location.location_name }} không?">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ngx-paginator [current_page]="currentPage" [last_page]="lastPage"></ngx-paginator>

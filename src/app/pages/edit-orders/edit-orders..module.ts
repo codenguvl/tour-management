@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './dashboard.component';
+import { EditOrdersComponent } from './edit-orders.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
-
 @NgModule({
   imports: [BreadcrumbModule],
-  declarations: [DashboardComponent],
+  declarations: [EditOrdersComponent],
 })
-export class DashboardModule {}
+export class EditOrdersModule {}

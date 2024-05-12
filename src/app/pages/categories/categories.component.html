@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Danh sách danh mục</h2>
+    <button class="btn btn-success" (click)="navigateToAddCategories()">Thêm mới</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên Danh Mục</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rows">
+            <td>{{ row.id }}</td>
+            <td>{{ row.name }}</td>
+            <td>
+                <button class="btn btn-primary" (click)="navigateToEditCategories(row.id)">Chỉnh sửa</button>
+                <span class="mx-2"></span>
+                <button class="btn btn-danger" (click)="confirmDelete(row)" data-toggle="popover" data-trigger="focus"
+                    title="Xác nhận xóa" data-content="Bạn có chắc chắn muốn xóa {{ row.name }} không?">Xóa</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<ngx-paginator [current_page]="currentPage" [last_page]="lastPage"></ngx-paginator>

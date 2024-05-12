@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Danh sách vai trò</h2>
+    <button class="btn btn-success" (click)="navigateToAddRole()">Thêm mới</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên Vai Trò</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let role of roles">
+            <td>{{ role.id }}</td>
+            <td>{{ role.name }}</td>
+            <td>
+                <button class="btn btn-primary" (click)="navigateToEditRole(role.id)">Chỉnh sửa</button>
+                <span class="mx-2"></span>
+                <button class="btn btn-danger" (click)="confirmDelete(role)" data-toggle="popover" data-trigger="focus"
+                    title="Xác nhận xóa" data-content="Bạn có chắc chắn muốn xóa {{ role.name }} không?">Xóa</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ngx-paginator [current_page]="currentPage" [last_page]="lastPage"></ngx-paginator>

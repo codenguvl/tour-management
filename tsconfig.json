@@ -1,6 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "types": [
+      "jquery"
+    ],
     "importHelpers": true,
     "module": "es2020",
     "outDir": "./dist/out-tsc",
@@ -29,7 +32,9 @@
       "dom"
     ],
     "plugins": [
-      { "name": "tslint-language-service"}
+      {
+        "name": "tslint-language-service"
+      }
     ]
   }
 }

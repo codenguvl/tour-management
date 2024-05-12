@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row mb-3">
+        <div class="col d-flex justify-content-between align-items-center">
+            <h2>Sửa địa điểm</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form>
+            <div class="form-group">
+                <label for="locationName">Tên địa điểm:</label>
+                <input type="text" class="form-control" id="locationName" name="locationName"
+                    placeholder="Nhập tên địa điểm" [(ngModel)]="location.location_name">
+            </div>
+            <div class="form-group mt-3">
+                <label for="category">Thể loại:</label>
+                <select class="form-control" id="category" name="category" [(ngModel)]="location.category_id">
+                    <option value="1">Thể loại 1</option>
+                    <option value="2">Thể loại 2</option>
+                    <option value="3">Thể loại 3</option>
+                </select>
+            </div>
+            <div class="form-group mt-3">
+                <label for="locationImage">Hình ảnh:</label>
+                <input type="file" class="form-control-file" id="locationImage" name="locationImage"
+                    (change)="previewImage($event)">
+                <img *ngIf="imageUrl" [src]="imageUrl" id="imagePreview" class="mt-2"
+                    style="max-width: 300px; display: block;" alt="Xem trước hình ảnh">
+                <img *ngIf="!imageUrl && location.image_url" [src]="location.image_url" id="imagePreview" class="mt-2"
+                    style="max-width: 300px; display: block;" alt="Xem trước hình ảnh">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Sửa địa điểm</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row mb-3">
+        <div class="col d-flex justify-content-between align-items-center">
+            <h2>Chỉnh sửa tour</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form (ngSubmit)="saveChanges(form.value)" #form="ngForm">
+            <div class="form-group">
+                <label for="tourName">Tên tour:</label>
+                <input type="text" class="form-control mt-2" id="tourName" name="tourName" ngModel
+                    [(ngModel)]="tour.tour_name" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="locationId">Địa điểm:</label>
+                <input type="number" class="form-control mt-2" id="locationId" name="locationId" ngModel
+                    [(ngModel)]="tour.location_id" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="startDate">Ngày bắt đầu:</label>
+                <input type="date" class="form-control mt-2" id="startDate" name="startDate" ngModel
+                    [(ngModel)]="tour.start_date" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="endDate">Ngày kết thúc:</label>
+                <input type="date" class="form-control mt-2" id="endDate" name="endDate" ngModel
+                    [(ngModel)]="tour.end_date" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="price">Giá:</label>
+                <input type="number" class="form-control mt-2" id="price" name="price" ngModel [(ngModel)]="tour.price"
+                    required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="description">Mô tả:</label>
+                <textarea class="form-control mt-2" id="description" name="description" ngModel
+                    [(ngModel)]="tour.description" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Lưu thay đổi</button>
+            <span class="mx-2"></span>
+            <button type="button" class="btn btn-secondary mt-3" (click)="goBack()">Quay lại</button>
+        </form>
+    </div>
+</div>
